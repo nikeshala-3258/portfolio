@@ -1,0 +1,207 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal  Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/c.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text"><br><br>
+                <p>Software Engineering Student</p>
+                <h1>Hi, I'm <span>Nikeshala Dewindi</span><br> From Sri Lanka</h1>
+            </div>
+        </div>
+    </div>
+    <!--about-->
+<div id="about">
+    <div id="container">
+        <div class="row">
+            <div class="about-col-1"> 
+                <img src="images/b.png">
+            </div>
+
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p> I am a passionate Software Engineering student who loves designing and developing user-friendly software solutions. <br>I enjoy learning and exploring new technologies to enhance my skills.</p><br><br>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+
+                    </div><br>
+                  <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Programming:</span> Java, Python, C++</li>
+                        <li><span>Web Development:</span> HTML, CSS, JavaScript</li>
+                        <li><span>Tools:</span> Git, Adobe XD, Figma</li>
+                    </ul>
+                  </div>
+                  <div class="tab-contents" id="projects">
+                    <ul>
+                        <li><span>Library Management System:</span> Designed and implemented a book management system for universities.</li>
+                            <li><span>Portfolio Website:</span> Developed a responsive personal website using HTML and CSS.</li>
+                    </ul>
+                  </div>
+                  <div class="tab-contents" id="education">
+                    <ul>
+                        
+                        <li><span>2023 - Present:</span> Bachelor of Software Engineering, Kothelawela Defence University</li>
+                        <li><span>2019 - 2021:</span> Advanced Level (Physical Science), St.Mary's Convent</li>
+                    </ul>
+                  </div>
+
+                
+
+            </div>
+
+           
+        </div>
+    </div>
+</div>
+
+ <!--    -->
+
+
+ <div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            
+            <div>
+                
+                <h2>Custom Software Development</h2>
+                <p>Building tailored software solutions to meet specific needs.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <h2>Web Development</h2>
+                <p>Designing and developing responsive and dynamic websites.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <h2>Database Management</h2>
+                <p>Creating and managing efficient database systems for data storage.</p>
+                <a href="#">Learn more</a>
+            </div>
+
+
+
+
+        </div>
+    </div>
+ </div>
+<!-- Portfolio-->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3>Custom Software Solution</h3>
+                    <p>Developed tailored software to automate business processes.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3>Responsive Web App</h3>
+                    <p>Designed and implemented a responsive e-commerce website.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h3>Database Management System</h3>
+                    <p>Created a scalable database system for a retail application.</p>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>contactme@gmail.com</p>
+                <p>01124569856</p><br>
+                <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <?php if (isset($successMessage)): ?>
+                    <p style="color: green;"> <?php echo $successMessage; ?> </p>
+                <?php elseif (isset($errorMessage)): ?>
+                    <p style="color: red;"> <?php echo $errorMessage; ?> </p>
+                <?php endif; ?>
+                <form action="" method="POST">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <br><br>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <br><br>
+                    <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                    <br><br>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright @Just Do It.</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+      var tablinks= document.getElementsByClassName("tab-links");
+      var tabcontents= document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+          event.currentTarget.classList.add("active-link");
+          document.getElementById(tabname).classList.add("active-tab");
+      }
+
+
+
+</script>
+
+
+
+</body>
+</html>
